@@ -9,6 +9,7 @@ class Learner{
         private $_age;
         private $_size;
         private $_status;
+        private $_id;
 
         const APPRENANT ='apprenant';
         const FORMATEUR ='formateur';
@@ -70,6 +71,10 @@ class Learner{
             return $this->_status;
         }
 
+        public function getId(){
+            return $this->_id;
+        }
+
 
         //setters (mutateurs)
 
@@ -99,6 +104,10 @@ class Learner{
         public function setStatus(string $status){
             $this->_status = $status;
 
+        }
+
+        public function setId($id){
+            $this->_id = $id;
         }
 
         // methods (méthodes)
@@ -139,11 +148,18 @@ class Learner{
                     if(isset($tab['size']) && !empty($tab['size']))
                     $this->setSize($tab['size']);
 
-                    if(isset($tab['status']) && !empty($tab['status']))
-                    $this->setStatus($tab['status']);
+                    if(isset($tab['situation']) && !empty($tab['situation']))
+                    $this->setStatus($tab['situation']);
+
+                    if(isset($tab['id']) && !empty($tab['id']))
+                    $this->setId($tab['id']);
  
                 
             }
+
+           
+
+
 
 
 
